@@ -1,0 +1,17 @@
+.header {
+  padding: 3rem;
+  text-align: center;
+  align-items: center;
+}
+
+.icon {
+  height: 32px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
