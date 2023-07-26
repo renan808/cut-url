@@ -14,7 +14,9 @@
       <% } %>
       <div class="header">
         <div>
-          <h1>Cut URL</h1>
+          <a href="<%=process.env.DOMAIN%>">
+            <h1>Cut URL</h1>
+          </a>
           <img src="/images/scissors.png" class="icon">
         </div>
       </div>
@@ -23,19 +25,21 @@
       </div>
       <div class="content">
             <div class="mt-3 input-group input-group-lg" style="width: 50%; margin-left: 60px;">
-                <input  id="link" name="link" value="<%=code%>" class="form-control" style="height: 60px;" readonly>
-
+                <input id="link" name="link" value="<%=code%>" class="form-control" style="height: 60px;" readonly>
                 <div class="input-group-append">
-                  <button class="btn btn-primary" onclick="copy()">
+                  <button id="button" class="btn btn-primary" onclick="copy()">
                     Copy URL
                   </button>
                   <script>
                     function copy() {
+                      let button = document.getElementById("button")
+                      button.innerHTML = "Copied!"
                       let textcopy = document.getElementById("link")
                       textcopy.select(textcopy)
                       document.execCommand("copy")
                     }
                   </script>
+                  <br/>
                 </div>
             </div>
       </div>
