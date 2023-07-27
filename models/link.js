@@ -19,7 +19,7 @@ const Link = database.define('link', {
     hits: {
         type: Sequelize.INTEGER.UNSIGNED,
         allowNull: true,
-        defaultValue: 0
+        defaultValue: 1
     }
 })
 

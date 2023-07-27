@@ -49,19 +49,20 @@ router.get('/', function (req, res) {
 
 router.post('/newcut', async (req, res, next) => {
   const test = await Link.findOne({where: {url: req.body.link}})
-  if (test && test.url.length > 0) {
+  if (test) {
     res.render('urlcut', {code: test.code})
   }
   else {
-    axios.get(req.body.link).then(() => {
+    axios.get(req.body.link).then(async () => {
       const code =  process.env.DOMAIN+gencode()
       const link = Link.build(({
         code: code,
         url: req.body.link,
         hits: 0}))
-      link.save()
-      res.render('urlcut', {code:code})
+        await link.save()
+        res.render('urlcut', {code:code})
     }).catch((err) => {
+      console.log(err)
       req.flash("error_msg", "Invalid link")
       res.redirect('/')
     })}

@@ -31,12 +31,20 @@
             Redirects to:<br/>
             <%=status.url%>
         </p>
-        <p>
-            Number of clicks: <br/>
+        <div class="statusrow">
+          <div class="statusbox">
             <b>
-                <%=status.hits%>
+              <%=status.hits%>
             </b>
-        </p>
+            <p>Visits</p>
+          </div>
+          <div class="statusbox">
+            <b>
+              <%=status.updatedAt%>
+            </b>
+            <p>Last visit</p>
+          </div>
+        </div>
       </div>
     </div>
   </body>
