@@ -12,3 +12,4 @@ A URL shortener with some functions, shortens large url's and shows their status
 - [Express](https://expressjs.com/pt-br/)
 - [EJS](https://ejs.co)
 - [SQLITE](https://www.sqlite.org/index.html)
+- [CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
